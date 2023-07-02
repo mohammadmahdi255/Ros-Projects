@@ -1,0 +1,2 @@
+int16 degree
+bool isClockwise

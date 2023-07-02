@@ -1,0 +1,9 @@
+<launch>
+
+    <node pkg="wall_follower" type="follow_wall.py" name="follow_wall" output="screen" ></node>
+
+    <include file="$(find wall_follower)/launch/turtlebot3_big_wall.launch">        
+    </include>
+    
+   
+</launch>

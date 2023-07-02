@@ -1,0 +1,19 @@
+<launch>
+
+    <node pkg="step1" type="mission_node.py" name="Mission_Node" output="screen"></node>
+
+    <node pkg="step1" type="control_node.py" name="Control_Node" output="screen">
+        <param name="linear_speed" value="0.8" />
+        <param name="angular_speed" value="0.2"/>
+        <param name="epsilon" value="0.001"/>
+    </node>
+
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_detect_obstacles.launch">
+        <arg name="x_pos" value="0"/>
+        <arg name="y_pos" value="0"/>
+        <arg name="z_pos" value="0.0"/>
+    </include>
+
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_gazebo_rviz.launch"/>
+   
+</launch>
